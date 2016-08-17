@@ -1,0 +1,29 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script type="text/javascript" src="test.js"></script>
+<script type="text/javascript">
+$.ajax({
+	method: "GET",
+	beforeSend: function(xhr, settings) { 
+		xhr.setRequestHeader('Authorization','Token ' + "b217f55495e67b45164b5d82627775d3368285dd"); 
+	},
+	url: "https://api.packd.org/locations/16/",
+	error: function (jqXHR, textStatus, errorThrown) {
+		alert("PROBLEM!");
+	},
+	success: function (data) {
+		// Do something here with the data
+		var data = JSON.parse(data);
+		var div = $("#data");
+	    div.value = data.current_percent;
+		// Other stuff for dsiplay
+	
+	}
+})
+</script>
+
+<html>
+<body>
+<div id="data" value=""></div>
+</body>
+</html>
