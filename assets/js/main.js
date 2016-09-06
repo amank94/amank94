@@ -164,3 +164,5 @@
 	});
 
 })(jQuery);
+
+//Image code
